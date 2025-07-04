@@ -6,18 +6,55 @@ import { db } from "./data/db";
 
 function App() {
   const [data, setData] = useState(db);
-  console.log("data: ", data);
+  const [cart, setCart] = useState([]);
+  const MAX_ITEM = 5;
+  const MIN_ITEM = 1;
 
+  function addToCart(item) {
+    let itemExist = cart.findIndex((guitar) => guitar.id === item.id);
+    if (itemExist >= 0) {
+      const updateCart = [...cart];
+      updateCart[itemExist].quantity++;
+      setCart(updateCart);
+    } else {
+      item.quantity = 1;
+      setCart((prevCart) => [...prevCart, item]);
+    }
+  }
+
+  function decreaseQuantity(id) {
+    const updateCart = cart.map((item) => {
+      if (item.id === id) {
+        if (item.quantity >= MIN_ITEM) {
+          return { ...item, quantity: item.quantity - 1 };
+        }
+      }
+      return item;
+    });
+    setCart(updateCart);
+  }
+
+  function removeFromCart(id) {
+    console.log("removeeee ", id);
+    // cuando tengo parametros en la function, cuando la llamo tengo que pasarla en un callback de arroy
+    setCart((prevCart) => prevCart.filter((guitar) => guitar.id !== id));
+    console.log("cart: ", cart);
+  }
   return (
     <>
-      <Header />
+      <Header
+        cart={cart}
+        removeFromCart={removeFromCart}
+        decreaseQuantity={decreaseQuantity}
+        addToCart={addToCart}
+      />
 
       <main className="container-xl mt-5">
         <h2 className="text-center">Nuestra Colección</h2>
 
         <div className="row mt-5">
           {data.map((guitar) => (
-            <Guitar key={guitar.id} guitar={guitar} />
+            <Guitar key={guitar.id} guitar={guitar} addToCart={addToCart} />
           ))}
         </div>
       </main>
