@@ -22,12 +22,20 @@ function App() {
     }
   }
 
+  function increaseQuantity(id) {
+    const updateCart = cart.map((item) => {
+      if (item.id === id && item.quantity < MAX_ITEM) {
+        return { ...item, quantity: item.quantity + 1 };
+      }
+      return item;
+    });
+    setCart(updateCart);
+  }
+
   function decreaseQuantity(id) {
     const updateCart = cart.map((item) => {
-      if (item.id === id) {
-        if (item.quantity >= MIN_ITEM) {
-          return { ...item, quantity: item.quantity - 1 };
-        }
+      if (item.id === id && item.quantity >= MIN_ITEM) {
+        return { ...item, quantity: item.quantity - 1 };
       }
       return item;
     });
@@ -46,6 +54,7 @@ function App() {
         cart={cart}
         removeFromCart={removeFromCart}
         decreaseQuantity={decreaseQuantity}
+        increaseQuantity={increaseQuantity}
         addToCart={addToCart}
       />
 

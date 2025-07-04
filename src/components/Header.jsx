@@ -1,4 +1,10 @@
-const Header = ({ cart, addToCart, removeFromCart, decreaseQuantity }) => {
+const Header = ({
+  cart,
+  addToCart,
+  removeFromCart,
+  decreaseQuantity,
+  increaseQuantity,
+}) => {
   const isEmpty = () => cart.length === 0;
   const cartTotal = () =>
     cart.reduce((total, item) => total + item.quantity * item.price, 0);
@@ -69,7 +75,7 @@ const Header = ({ cart, addToCart, removeFromCart, decreaseQuantity }) => {
                               <button
                                 type="button"
                                 className="btn btn-dark"
-                                onClick={() => addToCart(item)}
+                                onClick={() => increaseQuantity(item.id)}
                               >
                                 +
                               </button>
