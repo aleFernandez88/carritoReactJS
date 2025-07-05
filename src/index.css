@@ -14,7 +14,8 @@
     max-width: 2rem;
     position: relative;
     z-index: 100;
-
+    display: flex;
+    align-items: center;
 }
 
 .carrito #carrito {
@@ -167,7 +168,7 @@ h1,
     font-family: "Outfit", sans-serif;
     font-weight: 900;
     line-height: 1.2;
-    color: #e99401;
+    color: #f2f3f3;
 }
 
 h1,
@@ -352,6 +353,12 @@ button:not(:disabled),
     margin-left: auto;
 }
 
+.container-fluid {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto
+}
+
 @media (min-width: 1200px) {
     .container-xl {
         max-width: 1140px;
@@ -376,7 +383,7 @@ button:not(:disabled),
 
 .row>* {
     flex-shrink: 0;
-    width: 100%;
+    /* width: 100%; */
     max-width: 100%;
     padding-right: calc(var(--bs-gutter-x) * 0.5);
     padding-left: calc(var(--bs-gutter-x) * 0.5);
@@ -386,6 +393,11 @@ button:not(:disabled),
 .col-4 {
     flex: 0 0 auto;
     width: 33.33333333%;
+}
+
+.justify-content-between {
+    justify-content: space-between !important;
+    margin: 0 20px;
 }
 
 .col-8 {
@@ -737,7 +749,7 @@ button:not(:disabled),
 /* rtl:end:remove */
 .text-primary {
     --bs-text-opacity: 1;
-    color: rgba(var(--bs-primary-rgb), var(--bs-text-opacity)) !important;
+    color: rgb(102 252 241) !important;
 }
 
 .text-black {
@@ -810,9 +822,7 @@ button:not(:disabled),
 }
 
 .header {
-    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("../img/header.jpg");
-    /** TODO: Eliminar la sig linea **/
-    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("../public/img/header.jpg");
+    background-color: #e4e2dd;
     background-position: 50%;
     background-size: cover;
     position: relative;
@@ -834,4 +844,52 @@ button:not(:disabled),
         animation-name: animarImagen;
         z-index: 10;
     }
+}
+
+.logo {
+    height: 150px;
+}
+
+.iconCart {
+    font-size: 40px;
+}
+
+.wallpaper {
+    height: 60vh;
+    background: linear-gradient(to right, rgba(1, 1, 1, 1) 10%, rgba(1, 1, 1, 0.8) 51%, rgba(1, 1, 1, 0.2) 100%), url(/img/wallpaper-guitarstore.jpg);
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.lead {
+    color: #fefefe;
+    font-size: 20px;
+}
+
+.btn-animado {
+    margin-top: 20px;
+    padding: 12px 30px;
+    border: none;
+    background-color: #66fcf1;
+    color: #0b0c10;
+    font-weight: bold;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+}
+
+.btn-animado:hover {
+    background-color: #45a29e;
+    color: #fff;
+    transform: translateY(-2px);
+}
+
+.subtitulo {
+    color: #3b3c3c;
+    text-shadow: none;
+}
+
+.precio {
+    text-shadow: 1px 2px 1px #000;
 }

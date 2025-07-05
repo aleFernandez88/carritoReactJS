@@ -3,16 +3,27 @@ import { useState, useEffect } from "react";
 import Guitar from "./components/Guitar";
 import Header from "./components/Header";
 import { db } from "./data/db";
+import Hero from "./components/Hero";
 
 function App() {
-  const [data, setData] = useState(db);
-  const [cart, setCart] = useState([]);
+  const initialCart = () => {
+    const localStorageCart = localStorage.getItem("cart");
+    return localStorageCart ? JSON.parse(localStorageCart) : [];
+  };
+
+  const [data] = useState(db);
+  const [cart, setCart] = useState(initialCart());
   const MAX_ITEM = 5;
   const MIN_ITEM = 1;
+
+  useEffect(() => {
+    localStorage.setItem("cart", JSON.stringify(cart));
+  }, [cart]);
 
   function addToCart(item) {
     let itemExist = cart.findIndex((guitar) => guitar.id === item.id);
     if (itemExist >= 0) {
+      if (cart[itemExist].quantity === MAX_ITEM) return;
       const updateCart = [...cart];
       updateCart[itemExist].quantity++;
       setCart(updateCart);
@@ -48,6 +59,10 @@ function App() {
     setCart((prevCart) => prevCart.filter((guitar) => guitar.id !== id));
     console.log("cart: ", cart);
   }
+  function cleanCart() {
+    setCart([]);
+  }
+
   return (
     <>
       <Header
@@ -56,10 +71,11 @@ function App() {
         decreaseQuantity={decreaseQuantity}
         increaseQuantity={increaseQuantity}
         addToCart={addToCart}
+        cleanCart={cleanCart}
       />
-
+      <Hero />
       <main className="container-xl mt-5">
-        <h2 className="text-center">Nuestra Colección</h2>
+        <h2 className="text-center subtitulo">Nuestra Colección</h2>
 
         <div className="row mt-5">
           {data.map((guitar) => (

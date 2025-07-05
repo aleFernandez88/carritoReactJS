@@ -4,7 +4,7 @@ const Guitar = ({ guitar, addToCart }) => {
       <div className="col-4">
         <img
           className="img-fluid"
-          src={`/img/guitarra_0${guitar.id}.jpg`}
+          src={`/img/guitarra_${guitar.id}.jpg`}
           alt="imagen guitarra"
         />
       </div>
@@ -13,7 +13,7 @@ const Guitar = ({ guitar, addToCart }) => {
           {guitar.name}
         </h3>
         <p>{guitar.description}</p>
-        <p className="fw-black text-primary fs-3">${guitar.price}</p>
+        <p className="fw-black text-primary fs-3 precio">${guitar.price}</p>
         <button
           type="button"
           className="btn btn-dark w-100"
