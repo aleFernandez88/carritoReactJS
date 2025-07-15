@@ -1,16 +1,15 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
+
 const Header = ({
   cart,
   cleanCart,
   removeFromCart,
   decreaseQuantity,
   increaseQuantity,
+  isEmpty,
+  cartTotal,
 }) => {
-  const isEmpty = () => cart.length === 0;
-  const cartTotal = () =>
-    cart.reduce((total, item) => total + item.quantity * item.price, 0);
-
   return (
     <header className="header">
       <div className="container-xl">
@@ -48,7 +47,7 @@ const Header = ({
                             <td>
                               <img
                                 className="img-fluid"
-                                src={`/img/guitarra_0${item.id}.jpg`}
+                                src={`/img/guitarra_${item.id}.jpg`}
                                 alt="imagen guitarra"
                               />
                             </td>
