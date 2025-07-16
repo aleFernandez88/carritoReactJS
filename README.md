@@ -1,12 +1,66 @@
-# React + Vite
+# 🛒 Carrito de Compras en React (JavaScript)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Este proyecto es una aplicación de carrito de compras construida con **React** en JavaScript puro. Incluye funcionalidades de agregar y quitar productos del carrito, persistencia en **LocalStorage**, y está estilizado con **Bootstrap 4**, íconos de **Font Awesome**, y fuentes de **Google Fonts**.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Tecnologías utilizadas
 
-## Expanding the ESLint configuration
+- ⚛️ React (JS)
+- 💾 LocalStorage (persistencia de datos)
+- 🎨 Bootstrap 4
+- 🌐 Font Awesome Icons
+- ✍️ Google Fonts
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## 📦 Funcionalidades
+
+- ✅ Listado de productos
+- ➕ Agregar productos al carrito
+- ➖ Quitar productos del carrito
+- 💾 Persistencia con localStorage
+- 🧠 Uso de fundamentos y buenas prácticas de React y JavaScript
+
+---
+
+## 📁 Estructura del proyecto
+
+/src
+├── components/
+│ ├── ProductCard.jsx
+│ ├── Cart.jsx
+├── data/
+│ └── db.js
+├── hooks/
+│ └── useCart.js
+├── App.jsx
+└── main.jsx
+
+---
+
+## 🧑‍💻 Buenas prácticas aplicadas
+
+- Componentes reutilizables y separados
+- Manejo de estado con `useState` y `useEffect`
+- Uso de `prop-types` para validar props
+- Persistencia usando `localStorage` en el ciclo de vida del componente
+- Separación de lógica y UI
+
+---
+
+## ▶️ Instalación y ejecución
+
+1. Cloná el repositorio:
+   ```
+   git clone https://github.com/aleFernandez88/carritoReactJS.git
+   cd carritoReactJS
+   ```
+
+Instalá las dependencias:
+
+npm install
+
+Ejecutá el proyecto:
+
+npm run dev
