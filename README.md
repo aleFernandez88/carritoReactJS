@@ -24,9 +24,20 @@ Este proyecto es una aplicación de carrito de compras construida con **React** 
 
 ---
 
+````markdown
 ## 📁 Estructura del proyecto
 
-<pre><code>```bash /src ├── components/ │ ├── ProductCard.jsx │ ├── Cart.jsx ├── data/ │ └── db.js ├── hooks/ │ └── useCart.js ├── App.jsx └── main.jsx ```</code></pre>
+```bash
+/src
+  ├── components/
+  │   ├── ProductCard.jsx
+  │   ├── Cart.jsx
+  ├── data/
+  │   └── db.js
+  ├── hooks/
+  │   └── useCart.js
+  ├── App.jsx
+  └── main.jsx
 
 ---
 
@@ -43,10 +54,12 @@ Este proyecto es una aplicación de carrito de compras construida con **React** 
 ## ▶️ Instalación y ejecución
 
 1. Cloná el repositorio:
-   ```
-   git clone https://github.com/aleFernandez88/carritoReactJS.git
-   cd carritoReactJS
-   ```
+```
+
+git clone https://github.com/aleFernandez88/carritoReactJS.git
+cd carritoReactJS
+
+```
 
 Instalá las dependencias:
 
@@ -55,3 +68,5 @@ npm install
 Ejecutá el proyecto:
 
 npm run dev
+```
+````
