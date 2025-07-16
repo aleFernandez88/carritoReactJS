@@ -26,16 +26,7 @@ Este proyecto es una aplicación de carrito de compras construida con **React** 
 
 ## 📁 Estructura del proyecto
 
-/src
-├── components/
-│ ├── ProductCard.jsx
-│ ├── Cart.jsx
-├── data/
-│ └── db.js
-├── hooks/
-│ └── useCart.js
-├── App.jsx
-└── main.jsx
+<pre><code>```bash /src ├── components/ │ ├── ProductCard.jsx │ ├── Cart.jsx ├── data/ │ └── db.js ├── hooks/ │ └── useCart.js ├── App.jsx └── main.jsx ```</code></pre>
 
 ---
 
